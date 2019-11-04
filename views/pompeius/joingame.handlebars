@@ -1,0 +1,53 @@
+<title>POMPEIUS</title>
+
+
+<div class="jumbotron jumbotron-fluid" style="background-color: #ffffff";>
+   <div class="container" align="center">
+  <img src="/img/logoc.png"  class="img-responsive img-fluid" >
+  </div>
+</div>
+
+<div align="center">
+
+    <div class="d-inline-block">
+        <div class="card bg-light mb-3" style="max-width: 30rem; margin: 30px; margin-top: -10px ">
+            <div class="card-body">
+                <div style="text-align: justify-all">
+                    <strong>
+                        <h5>Insira seu nome e código fornecido pelo professor para entrar na sala:</h5>
+                    </strong>
+                    <br>
+                    <div class="d-inline-block">
+                        <form action="/pompeius/in-game" method="POST">
+                        <div class="input-group mb-1">
+                            <input type="text" name="nomealuno" class="form-control" id="validaNome" placeholder="Nome" required>
+                        </div>
+                        <div class="input-group mb-3  ">
+                            <input type="text" name="codigoroom" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default" id="codigo" placeholder="Código" required>
+                        </div>
+                        <a href="/pompeius" class="btn btn btn-outline-info"><b>VOLTAR</b></a>
+                        <button class="btn btn-outline-info" type="submit"><b>JOGAR</b></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div align="center">
+            <div class="card border-info bg-ligh mb-3 " style="max-width: 30rem;">
+                <div class="card-header"><b> ENTRAR NA SALA </b></div>
+                <div class="card-body">
+                    <form action="/pompeius/in-game" method="POST">
+                        <label for="nomealuno"> Insira seu nome:</label>
+                        <input type="text" name="nomealuno" class="form-control" id="nomealuno" placeholder="NOME"
+                            required>
+                        <br>
+                        <label for="codigoroom">Insira o código da Sala:</label>
+                        <input type="text" name="codigoroom" class="form-control" id="codigoroom" placeholder="CÓDIGO"
+                            required>
+                        <br>
+                        <button class="btn btn-info"><b>ENTRAR</b></button>
+                    </form>
+                </div>
+            </div>-->

@@ -1,0 +1,33 @@
+<div class="jumbotron">
+    <h1 class="display-4">Bem-Vindo</h1>
+    <p class="lead">Bem-vindo ao curso de NodeJS com Victor.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Crie uma Conta</a>
+</div>
+
+<hr>
+
+<h2>Postagens recentes: </h2>
+
+{{#each postagens}}
+
+<div class="card">
+    <div class="card-body mt-2">
+        <h3>{{titulo}}</h3>
+        <p>{{descricao}}</p>
+        <a href=""><button class="btn btn-success">Leia mais</button></a>
+        <small>Data de postagem: {{data}}</small>
+        <small>Categoria: {{categoria.nome}}</small>
+    </div>
+</div>
+
+{{else}}
+
+<div class="container mt-2">
+    <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Nenhuma postagem registrada!</h4>
+    </div>
+</div>
+
+{{/each}}

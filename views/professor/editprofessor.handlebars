@@ -1,0 +1,56 @@
+<title>PROFESSOR</title>
+
+<style>
+    body {
+        background-color: #00CCBB;
+    }
+</style>
+
+<div class="jumbotron jumbotron-fluid" style="background-color: #ffffff" ;>
+
+    <div class="container" align="center">
+        <img src="/img/logoc.png" class="img-responsive img-fluid">
+        <h2 class="display-4" align="center">EDITAR CONTA</h2>
+
+    </div>
+</div>
+
+
+
+
+<div class="card">
+    <!--<div class="card" style="margin-right: 200px; margin-left: 200px; margin-top: 30px; ">-->
+    <div class="card-header">
+
+
+
+        <form action="/professor/editprocess" method="POST">
+
+            <input type="hidden" name="id" id="id" value="{{user.id}}">
+
+            <div class="form-row">
+                <div class="col-md-5 mb-3">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome"
+                        value="{{user.nome}}" required>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-5 mb-3">
+                    <label for="mail">E-mail</label>
+                    <input type="email" name="email" class="form-control" id="mail" aria-describedby="emailHelp"
+                        placeholder="Escreva seu e-mail" value="{{user.mail}}" required>
+                    <span class="help-block">Informe o e-mail para o qual será enviado os resultados no final da
+                        rodada.</span>
+                </div>
+            </div>
+
+            <div align="left">
+                <button type="submit" class="btn btn-outline-info"><b>SALVAR ALTERAÇÕES</b></button>
+                <a href="/pompeius/inicio" class="float-right btn btn-outline-info"><b>VOLTAR</b></a>
+            </div>
+        </form>
+    </div>
+</div>
