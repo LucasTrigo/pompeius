@@ -44,7 +44,7 @@ app.engine('handlebars', handlebars({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars');
 //mongoose
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/pompeius").then(() => {
+mongoose.connect("mongodb://mongodb.pompeius.kinghost.net/pompeius01").then(() => {
     console.log("Conectado ao banco com sucesso!")
 }).catch((err) => {
     console.log("Erro ao se conectar ao banco: " + err)
