@@ -1,40 +1,42 @@
 <style>
     body {
-        background-color: #00CCBB;
+        background-color: #87CEFA;
     }
 </style>
 
 <div class="jumbotron jumbotron-fluid" style="background-color: #ffffff" ;>
 
+    {{>_msg}}
+
     <div class="container" align="center">
         <img src="/img/logoc.png" class="img-responsive img-fluid">
         <h2 class="display-4" align="center">CADASTRO</h2>
 
+        {{#each erros}}
+        <div class="alert alert-danger">{{texto}}</div>
+        {{else}}
+
+        {{/each}}
     </div>
 </div>
 
-{{#each erros}}
-<div class="alert alert-danger">{{texto}}</div>
-{{else}}
-
-{{/each}}
 
 <div class="card">
     <!--<div class="card" style="margin-right: 200px; margin-left: 200px; margin-top: 30px; ">-->
     <div class="card-header">
-        <form action="/professor/novo" method="POST">
+        <form action="/pompeius/professor/novo" method="POST">
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" required>
                 </div>
             </div>
-            
+
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <label for="mail">E-mail</label>
-                    <input type="email" name="email" class="form-control" id="mail" aria-describedby="emailHelp"
-                        placeholder="Escreva seu e-mail" required>
+                    <input type="email" name="loginmail" class="form-control" id="loginmail"
+                        aria-describedby="emailHelp" placeholder="E-mail" required>
                     <span class="help-block">Informe o e-mail para o qual será enviado os resultados no final da
                         rodada.</span>
                 </div>
@@ -45,22 +47,19 @@
 
                 <div class="col-md-3 mb-3">
                     <label for="senha" class="control-label">Senha</label>
-                    <input name="password" class="form-control" id="senha" placeholder="******" type="password"
-                        required>
+                    <input name="senha" class="form-control" id="senha" placeholder="Senha" type="password" required>
                     <span class="help-block">Mínimo de seis (6) digitos</span>
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="confirmSenha" class="control-label">Confirmar Senha</label>
-                    <input name="passwordConfirm" class="form-control" id="confirmSenha" placeholder="Confirme a senha"
-                        type="password" required>
+                    <input name="passwordConfirm" class="form-control" id="confirmSenha"
+                        placeholder="Confirme sua senha" type="password" required>
                 </div>
             </div>
 
 
-            <div align="left">
-                <button type="submit" class="btn btn-outline-info"><b>SALVAR</b></button>
-                <a href="/pompeius" class="float-right btn btn-outline-info"><b>VOLTAR</b></a>
-            </div>
+            <a href="/pompeius" class="btn btn btn-outline-info"><b>VOLTAR</b></a>
+            <button type="submit" class="btn btn-outline-info"><b>SALVAR</b></button>
         </form>
     </div>
 </div>

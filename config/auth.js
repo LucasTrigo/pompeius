@@ -5,13 +5,12 @@ const bcrypt = require('bcryptjs')
 require('../models/Professor')
 const Professor = mongoose.model('professores')
 
-
 module.exports = function(passport){
 
     passport.use(new localStrategy({usernameField: "loginmail", passwordField: "senha"}, (email, password, done)=>{
         Professor.findOne({mail: email}).then((professor)=>{
             if(!professor){
-                return done(null, false, {message: "Conta não encontrada! Tente novamente."})
+                return done(null, false, {message: "Conta não encontrada!"})
             }
 
             bcrypt.compare(password, professor.password, (erro, batem)=>{
@@ -22,6 +21,7 @@ module.exports = function(passport){
                 }
             })
         })
+
     }))
 
     passport.serializeUser((professor, done)=>{

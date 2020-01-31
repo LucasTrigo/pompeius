@@ -2,7 +2,7 @@
 
 <style>
     body {
-        background-color: #00CCBB;
+        background-color: #87CEFA;
     }
 </style>
 
@@ -10,9 +10,37 @@
     <div class="container" align="center">
         <img src="/img/logoc.png" class="img-fluid" alt="Imagem responsiva">
         <h2 class="display-4" align="center">CRIANDO SALA</h2>
+    {{>_msg}}
+
     </div>
 </div>
 
-<div align="right">
-    <a href="/professor/room-start"><button class="btn btn-success" ><b> INICIAR SALA </b></button></a>
+<div align="center">
+    <form action="/pompeius/professor/room-start" method="POST">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/img/brasil.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">ENIGMA LEI AUREA</h5>
+                        <p class="card-text">Esse enigma ensina o aluno a associar o ano em que surgiu a lei aurea</p>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="checkbox" name="leiaurea" id="leiaurea" value="1">
+                                </div>
+                            </div>
+                            <label class="form-control" for="leiaurea">Enigma Lei Aurea</label>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-footer">
+               <button class="btn btn-outline-info"><b> CRIAR SALA </b></button>
+    </form>
+</div>
+</div>
 </div>

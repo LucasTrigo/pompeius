@@ -2,13 +2,15 @@
 
 <style>
     body {
-        background-color: #00CCBB;
+        background-color: #87CEFA;
     }
 </style>
 
 <div class="jumbotron jumbotron-fluid" style="background-color: #ffffff" ;>
     <div class="container" align="center">
         <img src="/img/logoc.png" class="img-fluid" alt="Imagem responsiva">
+        {{>_msg}}
+
     </div>
 </div>
 
@@ -19,7 +21,7 @@
             <div class="card-header"><b>QUER JOGAR ?</b></div>
             <div class="card-body">
                 <p class="card-text">
-                    <h6>Você esta pronto? Clique em jogar e boa sorte!</h6>
+                    <h6>Você esta pronto? Clique em "JOGAR" e boa sorte!</h6>
                 </p>
                 <a class="btn btn-outline-info" href="/pompeius/join-game" role="button"><b>JOGAR</b></a>
             </div>
@@ -32,11 +34,13 @@
             <div class="card-body">
                 <p class="card-text">
                     <h6>Clique em "CADASTRAR" para criar uma conta e começar o jogo! Ou, se for cadastrado(a), selecione
-                        "LOGIN" para entrar e seguir com a aventura!</h6>
+                        "ENTRAR" para seguir!</h6>
                 </p>
                 <div class="d-inline-block">
-                    <a href="/professor/login"><button class="btn btn-outline-info mt-2"><b>ENTRAR</b></button></a>
-                    <a href="/professor/add"><button class="btn btn-outline-info mt-2"><b>CADASTRAR</b></button></a>
+                    <a href="/pompeius/professor/login"><button class="btn btn-outline-info "
+                            style="width: 121px; height: 38px"><b>ENTRAR</b></button></a>
+                    <a href="/pompeius/professor/add"><button
+                            class="btn btn-outline-info "><b>CADASTRAR</b></button></a>
                 </div>
             </div>
         </div>
@@ -49,7 +53,7 @@
                 <p class="card-text">
                     <h6>O que é isso? Como funciona?</h6>
                 </p>
-                <a class="btn btn-outline-info" href="#" role="button"><b>DESCOBRIR</b></a>
+                <a class="btn btn-outline-info" href="/pompeius/sobre" role="button"><b>DESCOBRIR</b></a>
             </div>
         </div>
     </div>

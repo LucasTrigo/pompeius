@@ -1,0 +1,50 @@
+<style>
+  body {
+    background-color: #fffff;
+  }
+</style>
+
+<title>ENIGMATIZANDO</title>
+
+{{#each erros}}
+<div class="alert alert-danger alert-dismissible fade show">{{message}} <button type="button" class="close"
+        data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button></div>
+
+{{else}}
+
+{{/each}}
+
+<div align="center">
+  <div class="d-inline-block" style="margin-top: 200px; ">
+    <img src="/img/RE.png" width="250px" height="250px" class="img-fluid" alt="Imagem responsiva">
+    <img src="/img/renascimento.png" width="400px" height="400px" class="img-fluid" alt="Imagem responsiva">
+
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<form action="/pompeius/enigma3/res" method="POST">
+  <div align="center">
+    <div class="col-sm-4">
+      <div class="input-group">
+        <input type="hidden" name="idAluno" value="{{aluno._id}}">
+        <input type="text" name="resren" class="form-control" id="resren">
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-light-outline-secondary" onclick="enviar();"
+            value="enviar"><b>RESPONDER</b></button>
+          </button>
+        </div>
+      </div>
+      <div align="center">
+        <strong>
+          <h5>Erros: {{aluno.erros}}</h5>
+        </strong>
+      </div>
+    </div>
+  </div>
+</form>

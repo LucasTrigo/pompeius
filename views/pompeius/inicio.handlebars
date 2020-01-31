@@ -1,77 +1,186 @@
 <style>
   body {
-    background-color: #00CCBB;
+    background-color: #FFFFFF;
   }
 </style>
 
-<div><a href="/professor/logout"><button type="button" class="float-right btn btn-danger"
-    style=" margin-right: 10px; margin-top: 10px "><b>SAIR</b></button></a></div>
 
-<!--<nav class="navbar navbar-light bg-light">
-  <form class="form-inline">
-    
-      <button class="btn btn-outline-info" type="button" style="margin-right: 40px" disabled><b>CRIAR SALA</b></button>
-    
-    <a href="/professor/edit">
-      <button class="btn btn-outline-info" type="button" style="margin-right: 40px"><b>EDITAR DADOS</b></button>
-    </a>
-  </form>
-  <a href="/professor/logout">
-    <button class="btn btn-outline-info" type="button" style="margin-right: 40px"><b>SAIR</b></button>
-  </a>
-</nav>-->
+<nav class="navbar navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <a href="/pompeius/inicio"><img src="/img/logoc.png" width="68" height="45" class="d-inline-block align-top"
+      alt="Imagem responsiva"></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link disabled">Criar Sala <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pompeius/professor/relatorios">Relatórios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pompeius/professor/about">Sobre</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Opções da Conta
+        </a>
+        <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/pompeius/professor/edit">Editar Dados</a>
+          <a class="dropdown-item" href="/pompeius/professor/alter-password">Alterar Senha</a>
+          <a class="dropdown-item" href="/pompeius/professor/remove-account">Excluir Conta</a>
+          <a class="dropdown-item" href="/pompeius/professor/logout">Sair</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline">
+    </form>
+  </div>
+</nav>
+
+
+
+
 
 <div class="jumbotron jumbotron-fluid" style="background-color: #ffffff" ;>
+
   <div class="container" align="center">
-    <img src="/img/logoc.png" class="img-responsive img-fluid">
-    <h2 class="display-4" align="center">CRIAR SALA</h2>
+
+    <h2 class="display-4" align="center">CRIANDO SALA</h2>
+  </div>
+  <div align="center">
+
+    <strong>Selecione os enigmas da sua escolha e clique em "CRIAR"</strong>
+    {{>_msg}}
 
   </div>
 </div>
 
-<div align="center">
 
-<div  class="d-inline-block">
-<div class="card bg-light mb-3" style="max-width: 18rem; margin: 30px; margin-top: 50px ">
-  <div class="card-header"><b>EDITAR MEUS DADOS</b></div>
-  <div class="card-body">
-     <p class="card-text"><h6>Quer mudar a senha ou e-mail? É aqui mesmo!</h6></p>
-    <div class="d-inline-block">
-    <a class="btn btn-outline-info" href="/professor/edit" role="button"><b>EDITAR</b></a>
-    </div>
+<div class="container">
+  <strong>
+    <h6>Não se lembra o título do enigma? Use o filtro para encontrar :) </h6>
+  </strong>
+
+
+  <input class="form-control" id="myInput" type="text" placeholder="Pesquisar..." onkeyup="myFunction()">
+  <div id="myDIV">
+
+    <br>
+    <form action="/pompeius/professor/room-start" method="POST">
+      <div align="center">
+        <!--<a class="btn btn-outline-success" href="/pompeius/professor/room-start" role="button"><b>CRIAR</b></a>-->
+        <button type="submit" class="btn btn-outline-success"><b>CRIAR</b></button>
+      </div>
+      <br>
+      <div align="center">
+        <div class="d-inline-block">
+          <div class="card" style="width: 18rem;">
+            <img src="/img/brasil.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">ENIGMA LEI AUREA</h5>
+              <p class="card-text">Para pesquisa e conhecimento de um momento importante na história da humanidade, utilizando um cálculo como ponto de partida</p>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input type="checkbox" name="leiaurea" id="leiaurea">
+                  </div>
+                </div>
+                <label class="form-control" for="leiaurea">Enigma Lei Aurea</label>
+
+              </div>
+              <a class="btn btn-outline-info" href="/pompeius/professor/liberdade" role="button"><b>VISUALIZAR</b></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-inline-block">
+          <div class="card" style="width: 18rem; margin-right: 25px;">
+            <img src="/img/pi.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">ENIGMA PI</h5>
+              <p class="card-text">Para memorizar o valor de PI e redobrar atenção na ordem dos fatores em um cálculo
+                matemático</p>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input type="checkbox" name="pi" id="pi">
+                  </div>
+                </div>
+                <label class="form-control" for="pi">"zero" ou "0"</label>
+
+              </div>
+              <a class="btn btn-outline-info" href="/pompeius/professor/vezes10x0" role="button"><b>VISUALIZAR</b></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-inline-block">
+          <div class="card" style="width: 18rem; margin-right: 25px;">
+            <img src="/img/renascimento.jpg" class="card-img-top" alt="..." style="width: 180px; height: 250px;">
+            <div class="card-body">
+              <h5 class="card-title">ENIGMA RENASCIMENTO</h5>
+              <p class="card-text">Uma importante mudança no modo de perceber o mundo onde passava-se de um pensamento
+                onde tudo se explica a partir de uma origem divina para uma visão em que o homem assume papel central em
+                relação ao universo</p>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input type="checkbox" name="renascimento" id="renascimento">
+                  </div>
+                </div>
+                <label class="form-control" for="renascimento">Renascimento</label>
+
+              </div>
+              <a class="btn btn-outline-info" href="/pompeius/professor/enigmatizando"
+                role="button"><b>VISUALIZAR</b></a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </form>
   </div>
 </div>
-</div>
 
-<div  class="d-inline-block">
-<div class="card bg-light mb-3" style="max-width: 18rem; margin: 30px; margin-top: 50px ">
-  <div class="card-header"><b>CRIAR SALA</b></div>
-  <div class="card-body">
-    <p class="card-text"><h6>Escolha os enigmas para compor a sala virtual</h6></p>
-    <a class="btn btn-outline-info" href="/professor/create-room" role="button"><b>CRIAR</b></a>
-  </div>
-</div>
-</div>
+<br>
+
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled  ">
+      <a class="page-link" href="#" tabindex="-1">Anterior</a>
+    </li>
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item disabled">
+      <a class="page-link" href="#">2 <span class="sr-only">(atual)</span></a>
+    </li>
+    <li class="page-item disabled"><a class="page-link" href="#">3</a></li>
+    <li class="page-item disabled">
+      <a class="page-link" href="#">Próximo</a>
+    </li>
+  </ul>
+</nav>
 
 
-<div  class="d-inline-block">
-<div class="card bg-light mb-3" style="max-width: 18rem; margin: 30px; margin-top: 50px ">
-  <div class="card-header"><b>RELATÓRIOS</b></div>
-  <div class="card-body">
-    <p class="card-text"><h6>Aqui etão os relatórios das partidas anteriores</h6></p>
-    <a class="btn btn-outline-info" href="#" role="button"><b>CONSULTAR</b></a>
-  </div>
-</div>
-</div>
-
-</div>
-
-<!--
-<div class="card" style="width: 18rem; margin-left: 50px">
-  <img src="/img/brasil.png" class="card-img-top" alt="">
-  <div class="card-body">
-    <h5 class="card-title">Enigma 1 - Lei Aurea</h5>
-    <p class="card-text">Click no botão abaixo para testar esse engima.</p>
-    <a href="/professor/enigma1" class="btn btn-outline-info"><b>Testar Enigma</b></a>
-  </div>
-</div>-->
+<script>
+  function myFunction() {
+    var input, filter, cards, cardContainer, h5, title, i, text;
+    input = document.getElementById("myInput");
+    filter = input.value;
+    cardContainer = document.getElementById("myDIV");
+    cards = cardContainer.getElementsByClassName("card");
+    for (i = 0; i < cards.length; i++) {
+      title = cards[i].querySelector(".card-body h5.card-title");
+      text = cards[i].querySelector(".card-body p.card-text");
+      if (title.innerText.indexOf(filter) > -1 || text.innerText.indexOf(filter) > -1) {
+        cards[i].style.display = "";
+      } else {
+        cards[i].style.display = "none";
+      }
+    }
+  }
+</script>

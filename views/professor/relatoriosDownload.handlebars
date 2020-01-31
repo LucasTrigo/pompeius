@@ -1,4 +1,4 @@
-<title>PROFESSOR</title>
+<title>POMPEIUS</title>
 
 <style>
   body {
@@ -17,7 +17,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a href="/pompeius/inicio" class="nav-link">Criar Sala <span class="sr-only">(current)</span></a>
+        <a class="nav-link disabled">Criar Sala <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/pompeius/professor/relatorios">Relatórios</a>
@@ -43,69 +43,27 @@
 </nav>
 
 
-
-
-
-
 <div class="jumbotron jumbotron-fluid" style="background-color: #ffffff" ;>
-
-
   <div class="container" align="center">
-    <h2 class="display-4" align="center">EDITAR DADOS</h2>
 
-    {{#each erros}}
-    <div class="alert alert-danger alert-dismissible fade show">{{texto}} <button type="button" class="close"
-        data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button></div>
+    <h2 class="display-4" align="center">RELATÓRIOS</h2>
+  </div>
+  <div align="center">
+    <strong>Esses são os relatórios das partidas anteriores. Clique no que desejar
+      para fazer o download:</strong>
+  </div>
+</div>
 
-    {{else}}
 
-    {{/each}}
-
-    {{>_msg}}
+<div align="center">
+  <div class="col-md-7 mb-3">
+    <a href="###" class="list-group-item list-group-item-action list-group-item-primary">Um simples item primary do grupo
+      de lista</a>
   </div>
 </div>
 
 
 
-
-<div class="card">
-  <!--<div class="card" style="margin-right: 200px; margin-left: 200px; margin-top: 30px; ">-->
-  <div class="card-header">
-
-
-
-    <form action="/pompeius/professor/editprocess" method="POST">
-
-      <input type="hidden" name="id" id="id" value="{{user.id}}">
-
-      <div class="form-row">
-        <div class="col-md-5 mb-3">
-          <label for="nome">Nome</label>
-          <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" value="{{user.nome}}"
-            required>
-        </div>
-
-      </div>
-
-      <div class="form-row">
-        <div class="col-md-5 mb-3">
-          <label for="mail">E-mail</label>
-          <input type="email" name="email" class="form-control" id="mail" aria-describedby="emailHelp"
-            placeholder="Escreva seu e-mail" value="{{user.mail}}" required>
-          <span class="help-block">Informe o e-mail para o qual será enviado os resultados no final da
-            rodada.</span>
-        </div>
-      </div>
-
-      <div align="left">
-        <button type="submit" class="btn btn-outline-info"><b>SALVAR ALTERAÇÕES</b></button>
-        <a href="/pompeius/inicio" class="float-right btn btn-outline-info"><b>VOLTAR</b></a>
-      </div>
-    </form>
-  </div>
-</div>
 
 
 <script>

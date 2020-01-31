@@ -1,6 +1,6 @@
 <style>
     body {
-        background-color: #00CCBB;
+        background-color: #87CEFA;
     }
 </style>
 
@@ -8,6 +8,8 @@
     <div class="container" align="center">
         <img src="/img/logoc.png" class="img-responsive img-fluid">
         <h2 class="display-4" align="center">ENTRAR</h2>
+        {{>_msg}}
+
     </div>
 </div>
 
@@ -15,19 +17,22 @@
     <!--<div class="card" style="margin-right: 500px; margin-left: 500px; margin-top: 30px; ">-->
     <div class="card-header">
 
-        <form action="/professor/efetuarlogin" method="POST">
+        <form action="/pompeius/professor/efetuarlogin" method="POST">
             <div class="form-group">
                 <label for="loginmail">E-Mail</label>
                 <input name="loginmail" id="loginmail" class="form-control" placeholder="E-Mail" type="email">
             </div> <!-- form-group// -->
             <div class="form-group">
-                <a class="float-right" href="/professor/password-save">Esqueci minha senha.</a>
+                <a class="float-right" href="/pompeius/professor/password-save">Esqueci minha senha.</a>
                 <label for="senha">Senha</label>
                 <input name="senha" class="form-control" id="senha" placeholder="******" type="password">
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-outline-info"><b>ENTRAR</b></button>
-                <a href="/pompeius" class="float-right btn btn btn-outline-info"><b>VOLTAR</b></a>
+
+            </div> <!-- form-group// -->
+            <div class="form-group">
+                <button type="submit" class="float-right btn btn-outline-info"><b>ENTRAR</b></button>
+                <a href="/pompeius" class="btn btn btn-outline-info"><b>VOLTAR</b></a>
             </div> <!-- form-group// -->
         </form>
     </div>

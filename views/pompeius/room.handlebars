@@ -1,19 +1,36 @@
-<title>POMPEIUS</title>
-
-<style>
-    body {
-        background-color: #00CCBB;
-    }
-</style>
-
 <div class="jumbotron jumbotron-fluid" style="background-color: #ffffff" ;>
-    <div class="container" align="center">
-        <img src="/img/logoc.png" class="img-fluid" alt="Imagem responsiva">
-    </div>
+  <div class="container" align="center">
+    <img src="/img/logoc.png" class="img-responsive img-fluid">
+    {{>_msg}}
+
+  </div>
 </div>
+
 
 <div align="center">
-    <h3>CÓDIGO DA SALA: {{sala.idRoom}}</h3>
-    <br>
-    <a href="/pompeius/room-close/{{sala._id}}"><button class="btn btn-danger"><b>FECHAR SALA</b></button></a>
-</div>
+
+  <div class="d-inline-block">
+    <div class="card bg-light mb-3" style="max-width: 30rem; margin: 30px; margin-top: -10px ">
+      <div class="card-body">
+        <div style="text-align: justify-all">
+          <strong>
+            <h6>Sala criada com sucesso! O código para entrar é:</h6>
+          </strong>
+          <strong>
+            <h1>{{sala.idRoom}}</h1>
+          </strong>
+          <br>
+
+          <a href="/pompeius/room-close/{{sala._id}}" class="btn btn btn-outline-danger"><b>ENCERRAR SALA</b></a>
+
+          {{#if sala.started}}
+
+
+          {{else}}
+          <a class="btn btn-outline-success" href="/pompeius/professor/room-start/{{sala._id}}" role="button"><b>INICIAR
+              SALA</b></a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>

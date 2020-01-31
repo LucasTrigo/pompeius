@@ -1,0 +1,63 @@
+<style type="text/css">
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
+
+
+<div align="center">
+    <img src="/img/logoc.png" width="75" height="50"
+        style="margin-left: -100px">
+    <span style="margin-left: 20px; font-family:sans-serif; font-size:150%;"> RELATÓRIO DE SALA POMPEIUS </span>
+</div>
+
+<br>
+
+<span style=" font-family:sans-serif; font-size:100%;">
+
+    CÓDIGO DE SALA: {{sala.idRoom}}
+    <br>
+    DATA: {{sala.createdAt}}
+    <br>
+    <br>
+
+    <br>
+    <table>
+
+        <tr>
+            <th>NOME PARTICIPANTE</th>
+            <th>ENIGMA</th>
+            <th>TEMPO</th>
+            <th>ERROS</th>
+        </tr>
+
+        <tr>
+            <td>{{aluno.nome}}</td>
+            <td>enigma 1: {{sala.enigma1}}</td>
+            <td>{{aluno.tempo_enigma}}</td>
+            <td>{{aluno.erros}}</td>
+        </tr>
+
+        <tr>
+            <td>{{aluno.nome}}</td>
+            <td>enigma 2: {{sala.enigma2}}</td>
+            <td>{{aluno.tempo_enigma}}</td>
+            <td>{{aluno.erros}}</td>
+        </tr>
+
+        <tr>
+            <td>{{aluno.nome}}</td>
+            <td>enigma 3: {{sala.enigma3}}</td>
+            <td>{{aluno.tempo_enigma}}</td>
+            <td>{{aluno.erros}}</td>
+        </tr>
+
+    </table>

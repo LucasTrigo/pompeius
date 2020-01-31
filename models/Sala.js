@@ -17,6 +17,22 @@ const Sala = new Schema({
     isOnline:{
         type: Boolean,
         default: true
+    },
+    started:{
+        type: Boolean,
+        default: false
+    },
+    enigma1:{
+        type: String,
+        default: "off"
+    },
+    enigma2:{
+        type: String,
+        default: "off"
+    },
+    enigma3:{
+        type: String,
+        default: "off"
     }
 })
 

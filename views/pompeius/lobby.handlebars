@@ -1,19 +1,50 @@
 <style>
-body {
-  background-color: #FFFFFF;
-}
+  body {
+    background-color: #FFFFFF;
+  }
 </style>
 
 
-<div class="jumbotron jumbotron-fluid" style="background-color: #ffffff";>
+<div class="jumbotron jumbotron-fluid" style="background-color: #ffffff" ;>
   <div class="container" align="center">
-  <img src="/img/logoc.png" class="img-fluid" alt="Imagem responsiva" >
+    <img src="/img/logoc.png" class="img-fluid" alt="Imagem responsiva">
+    {{>_msg}}
+
   </div>
 </div>
 
 <div class="text-center">
-    <strong><h5>Legal! Você entrou na sala! Agora, aguarde o(a) professor(a) inicia-la :)</h5></strong>
-    <br>
-    <br>
-<div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status"></div>
+  <strong>
+    <h5>Legal! Você entrou na sala! Agora, aguarde o(a) professor(a) inicia-la :)</h5>
+  </strong>
+  <br>
+  <br>
+  <div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status"></div>
 </div>
+
+<script type="text/javascript">
+
+  setTimeout(function () {
+
+    //window.location.href = "http://localhost:9091/pompeius/professor/verificacao/{{sala._id}}"
+    window.location.href = "https://pompeius.herokuapp.com/pompeius/professor/verificacao/{{sala._id}}"
+    if ({{ sala.started }}){
+    if ("{{sala.enigma1}}" == "on") {
+      //window.location.href = "http://localhost:9091/pompeius/enigma1/{{sala._id}}"
+      window.location.href = "http://pompeius.herokuapp.com/pompeius/enigma1/{{sala._id}}"
+    } else if ("{{sala.enigma2}}" == "on") {
+      //window.location.href = "http://localhost:9091/pompeius/enigma2/{{sala._id}}"
+      window.location.href = "http://pompeius.herokuapp.com/pompeius/enigma2/{{sala._id}}"
+    } else if ("{{sala.enigma3}}" == "on") {
+      //window.location.href = "http://localhost:9091/pompeius/enigma3/{{sala._id}}"
+      window.location.href = "http://pompeius.herokuapp.com/pompeius/enigma3/{{sala._id}}"
+    }
+    else {
+      //window.location.href = "http://localhost:9091/pompeius"
+      window.location.href = "https://pompeius.herokuapp.com/pompeius"
+    }
+  }
+
+}, 1000);
+
+</script>

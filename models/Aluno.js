@@ -9,6 +9,16 @@ const Aluno = new Schema({
     roomNow:{
         type: String,
         required: true
+    },
+    erros:{
+        type: Number
+    },
+    eAluno:{
+        type: Number,
+        default: 1
+    },
+    tempo_enigma:{
+        type: Date
     }
 })
 

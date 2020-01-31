@@ -1,6 +1,15 @@
 <link rel="shortcut icon" href="/pompeius/img/paba.png" type="image/x">
 <title>ISABEL</title>
-{{>_msg}}
+
+{{#each erros}}
+<div class="alert alert-danger alert-dismissible fade show">{{message}} <button type="button" class="close"
+        data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button></div>
+
+{{else}}
+
+{{/each}}
 
 <title>LIBERDADE</title>
 
@@ -14,7 +23,6 @@
     <div class="d-inline-block" style="margin-top: 200px; ">
         <img src="/img/brasil.png" class="img-fluid" alt="Imagem responsiva">
         <img src="/img/188.png" class="img-fluid" alt="Imagem responsiva">
-
     </div>
 </div>
 
@@ -22,17 +30,25 @@
 <br>
 <br>
 
-<form action="/pompeius/professor/liberdade/res" method="POST">
+<form action="/pompeius/enigma1/res" method="POST">
 
     <div align="center">
         <div class="col-sm-4">
             <div class="input-group">
+                <input type="hidden" name="idAluno" value="{{aluno._id}}">
+
                 <input type="text" name="resliberdade" class="form-control" id="resposta">
                 <div class="input-group-append">
                     <button type="submit" name="buttonres" class="btn btn-light-outline-secondary"
                         value="enviar"><b>RESPONDER</b></button>
                     </button>
                 </div>
+
+            </div>
+            <div align="center">
+                <strong>
+                    <h5>Erros: {{aluno.erros}}</h5>
+                </strong>
             </div>
         </div>
     </div>
